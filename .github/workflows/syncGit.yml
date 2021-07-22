@@ -10,7 +10,7 @@ on:
 jobs:
   repo-sync:
     env:
-      PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
+      PAT: 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 #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
       dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 我自己同步到gitee使用，其他人可忽略
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -26,7 +26,7 @@ jobs:
           source_repo: "https://github.com/lukesyy/jd_yun.git"
           source_branch: "main"
           destination_branch: "main"
-          github_token: ${{ secrets.PAT }}
+          github_token: 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
       # 我自己同步到gitee使用，其他人可忽略
       - name: sync github -> gitee
         uses: Yikun/hub-mirror-action@master
